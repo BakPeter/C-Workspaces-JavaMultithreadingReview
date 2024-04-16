@@ -2,7 +2,7 @@ package example1;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-        System.out.println("example1.Main Thread Started: " + Thread.currentThread().getName());
+        System.out.println("example1.performance.latency.Main Thread Started: " + Thread.currentThread().getName());
         Thread thread1 = new Thread(() -> {
             for (int i = 0; i < 5; i++) {
                 System.out.println(i + ": Thread -  " + Thread.currentThread().getName() + ", Priority - " + Thread.currentThread().getPriority());
@@ -40,6 +40,6 @@ public class Main {
         thread4.start();
 
         Thread.sleep(1000);
-        System.out.println("example1.Main Thread Finished: " + Thread.currentThread().getName());
+        System.out.println("example1.performance.latency.Main Thread Finished: " + Thread.currentThread().getName());
     }
 }
