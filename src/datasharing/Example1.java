@@ -2,6 +2,8 @@ package datasharing;
 
 public class Example1 {
     public static void run() throws InterruptedException {
+        long start = System.currentTimeMillis();
+
         InventoryCounter inventoryCounter = new InventoryCounter();
         IncrementingThread incrementingThread = new IncrementingThread(inventoryCounter);
         DecrementingThread decrementingThread = new DecrementingThread(inventoryCounter);
@@ -13,6 +15,9 @@ public class Example1 {
         decrementingThread.join();
 
         System.out.println(inventoryCounter);
+
+        long end = System.currentTimeMillis();
+        System.out.format("Example 1 duration - %d", end-start);
     }
 
     public static class DecrementingThread extends Thread {
